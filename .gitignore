@@ -459,6 +459,8 @@ $RECYCLE.BIN/
 # dependencies
 /node_modules
 
+
+
 # profiling files
 chrome-profiler-events*.json
 
@@ -480,7 +482,7 @@ chrome-profiler-events*.json
 .history/*
 
 # misc
-/.angular/cache
+_angular
 /.sass-cache
 /connect.lock
 /coverage
