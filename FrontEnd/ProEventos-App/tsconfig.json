@@ -1,14 +1,17 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "typescript.format.enable": true,
+  "typescript.suggest.autoImports": true,
   "compileOnSave": false,
   "compilerOptions": {
+
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -21,12 +24,24 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "files.associations": {
+          "tslint.json": "jsonc"
+        }
+      }
+    ],
+    "strictPropertyInitialization": false
+
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
+    "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+
+  },
+
 }

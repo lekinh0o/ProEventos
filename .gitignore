@@ -482,7 +482,7 @@ chrome-profiler-events*.json
 .history/*
 
 # misc
-_angular
+.angular
 /.sass-cache
 /connect.lock
 /coverage
@@ -495,6 +495,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.vscode
 
 #Excluindo DB
 *.db

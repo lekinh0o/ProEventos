@@ -9,7 +9,7 @@ export class NavComponent implements OnInit {
  isCollapsed = true;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
