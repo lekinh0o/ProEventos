@@ -14,7 +14,7 @@ import { Evento } from '../models/Evento';
 
     public getEventos(): Observable<Evento[]>{
 
-      return this.http.get<Evento[]>(`${this.baseURL}/list`);
+      return this.http.get<Evento[]>(`${this.baseURL}`);
 
     }
 

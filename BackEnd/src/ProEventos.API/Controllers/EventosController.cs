@@ -18,7 +18,7 @@ namespace ProEventos.API.Controllers
             _eventoService = eventoService;
         }
 
-        [HttpGet("list/")]
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
