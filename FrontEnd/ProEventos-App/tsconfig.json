@@ -8,7 +8,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": false,
@@ -33,7 +33,11 @@
         }
       }
     ],
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@app/*":["src/app/*"],
+      "@environments/*":["src/environments/*"]
+    }
 
   },
   "angularCompilerOptions": {
