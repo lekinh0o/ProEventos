@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +8,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { ptBrLocale } from 'ngx-bootstrap/locale';
 
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -30,7 +33,8 @@ import { EventosListaComponent } from './components/eventos/eventos-lista/evento
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
-
+import { defineLocale } from 'ngx-bootstrap/chronos';
+defineLocale('pt-br', ptBrLocale);
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +70,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
       progressBar: true,
     }),
     NgxSpinnerModule,
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [EventoService],

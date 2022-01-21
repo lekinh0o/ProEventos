@@ -1,6 +1,7 @@
 
 
 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,7 +11,7 @@ namespace ProEventos.Application.Dtos
     {
         public int Id { get; set; }
         public string Local { get; set; }
-        public string DataEvento { get; set; }
+        public DateTime? DataEvento { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório! "),
         StringLength(50, MinimumLength = 3, ErrorMessage = "Intervalo Permitido de 3 a 50 caracteres.")]

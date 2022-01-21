@@ -1,3 +1,4 @@
+import { DateTimeFormatPipe } from '@app/helpers/DateTimeFormat.pipe';
 import { Lote } from './Lote';
 import { Palestrante } from './Palestrante';
 import { RedeSocial } from './RedeSocial';

@@ -1,15 +1,15 @@
 <div class="card rounded shadow-sm">
   <form [formGroup]="form">
     <div class="p-3">
-      <!-- <p>Form value: {{form.value | json}}</p>
-      <p>Form valid: {{form.status | json}}</p> -->
+       <p>Form value: {{form.value | json}}</p>
+      <p>Form valid: {{form.status | json}}</p>
       <div class="row">
         <div class="form-group col-md-12">
           <label>Tema</label>
           <input
             type="text"
             class="form-control"
-            [ngClass]="{ 'is-invalid': f.tema.errors && f.tema.touched }"
+            [ngClass]="cssValidator(f.tema)"
             formControlName="tema"
             placeholder="Insira o Tema"
           />
@@ -30,9 +30,9 @@
           <input
             type="text"
             class="form-control"
-            [ngClass]="{ 'is-invalid': f.local.errors && f.local.touched }"
+            [ngClass]="cssValidator(f.local)"
             formControlName="local"
-            placeholder=""
+            placeholder="Local"
           />
           <div
             *ngIf="f.local.errors?.required && f.local.touched"
@@ -46,12 +46,12 @@
           <input
             type="datetime"
             class="form-control"
-            [ngClass]="{
-              'is-invalid': f.dataEvento.errors && f.dataEvento.touched
-            }"
+            [ngClass]="cssValidator(f.dataEvento)"
             formControlName="dataEvento"
-            placeholder="dd/MM/yyyy"
+            [bsConfig]="bsConfig"
+            bsDatepicker
           />
+
           <div
             *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched"
             class="invalid-feedback"
@@ -66,9 +66,7 @@
           <input
             type="number"
             class="form-control"
-            [ngClass]="{
-              'is-invalid': f.qtdPessoas.errors && f.qtdPessoas.touched
-            }"
+            [ngClass]="cssValidator(f.qtdPessoas)"
             formControlName="qtdPessoas"
             placeholder=""
           />
@@ -90,9 +88,7 @@
           <input
             type="text"
             class="form-control"
-            [ngClass]="{
-              'is-invalid': f.telefone.errors && f.telefone.touched
-            }"
+            [ngClass]="cssValidator(f.telefone)"
             formControlName="telefone"
             placeholder="(000) 90000-0000"
           />
@@ -108,7 +104,7 @@
           <input
             type="text"
             class="form-control"
-            [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }"
+            [ngClass]="cssValidator(f.email)"
             formControlName="email"
             placeholder="e-mail"
           />
@@ -130,9 +126,7 @@
           <input
             type="text"
             class="form-control"
-            [ngClass]="{
-              'is-invalid': f.imagemURL.errors && f.imagemURL.touched
-            }"
+            [ngClass]="cssValidator(f.imagemURL)"
             formControlName="imagemURL"
             placeholder="imagem"
           />
